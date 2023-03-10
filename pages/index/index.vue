@@ -3,12 +3,15 @@
 		<view class="abc">
 			{{counter}}
 		</view>
+		<VanButton type="primary">
+			132
+		</VanButton>
+		<view class="">
+			{{a}}
+		</view>
 	</view>
 </template>
-<script setup>
-	import {
-		useCounterStore
-	} from '@/stores/counter';
+<script setup lang="ts">
 	const counter = useCounterStore();
 
 	counter.count++;
@@ -18,10 +21,14 @@
 	});
 	// 或者使用 actions
 	counter.increment();
+
+	const a = ref(123)
+
+	console.log(apis.a)
 </script>
 
 <style lang="scss">
-	.abc{
+	.abc {
 		background-color: red;
 	}
 </style>
